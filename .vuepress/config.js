@@ -77,7 +77,9 @@ module.exports = {
           collapsable: false, // optional, defaults to true
           sidebarDepth: 3,    // optional, defaults to 1
           children: [
-            '/grupy/pt-18-15/array/przedruk-dokumentacji'
+            '/grupy/pt-18-15/array/przypomnienie',
+            '/grupy/pt-18-15/array/sciagawka',
+            '/grupy/pt-18-15/array/przedruk-dokumentacji',
           ]
         }
       ],

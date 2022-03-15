@@ -1,4 +1,4 @@
-# Podstawy list
+# Przedruk dokumentacji
 
 ```js
 let fruits = ['Apple', 'Banana']

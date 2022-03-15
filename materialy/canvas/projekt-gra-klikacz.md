@@ -1,4 +1,4 @@
-# Podstawy kożystania z elementu `canvas`
+# Projekt gry z elementem canvas
 
 [[toc]]
 

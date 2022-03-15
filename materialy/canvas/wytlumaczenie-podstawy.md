@@ -1,4 +1,4 @@
-# Podstawy kożystania z elementu `canvas`
+# Wprowadzenie do el. canvas
 
 [[toc]]
 

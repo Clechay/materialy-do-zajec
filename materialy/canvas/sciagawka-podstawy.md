@@ -1,4 +1,4 @@
-# Podstawy kożystania z elementu `canvas`
+# Ściągawka z canvasów i kontekstu 2d
 
 [[toc]]
 
