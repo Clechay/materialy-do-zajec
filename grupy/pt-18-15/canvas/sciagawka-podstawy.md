@@ -4,7 +4,7 @@
 
 ## Wstęp do elementu canvas
 
-### jak czytać dokumentację WebAPI
+### Gdzie szukać informacji na własną rękę
 
 Naszym głównym źródłem wiedzy jest [MDN](https://developer.mozilla.org/), niestety większość materiałów jest tam po angielsku.
 

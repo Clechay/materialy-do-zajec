@@ -1,19 +1,19 @@
-# Podstawy obsługi elementu `canvas`
+# Podstawy rysowania po canvasach
 
 [[toc]]
 
 ## Wstęp do elementu canvas
 
-### jak czytać dokumentację WebAPI
+### Gdzie szukać informacji na własną rękę
 
 Naszym głównym źródłem wiedzy jest [MDN](https://developer.mozilla.org/), niestety większość materiałów jest tam po angielsku.
 
 Są dwa rodzaje materiałów 
 
-* Refrence - to jest klasyczna dokumentacja ze szczegółowym opisem narzędzi do naszej dyspozycji
-* Guide - to są krótkie kursy jak kożystać z onych narzędzi.
+* Refrence - to są szczegółowe opisy narzędzi do naszej dyspozycji
+* Guide - to są krótkie kursy jak używać tych narzędzi
 
-Zazwyczaj nalepiej zobaczyć po pierwsze kurs (Guide) i gopiero kiedy nie będzie w nim odpowiedzi przejść do klasycznej dokumentacji (Refrence)
+Zwykle najlepiej zacząć od kursu (Guide) i dopiero jeżeli nie będzie w nim odpowiedzi przejść do klasycznej dokumentacji (Refrence)
 
 Są cztery kategorie treści
 * CSS - jak pisać style CSS
@@ -31,7 +31,7 @@ Korzystając z dokumentacji możemy trafić na podobny obrazek:
 
 Oznacza on tylko tyle, że nasz obiekt jest bardziej rozbudowaną wersją innego, prostszego obiektu.
 
-Np. HTMLCanvasElement umie wszystko to co podstawowe elementy (HTMLElement) ale ma też własne specjalne zdolności opisane na tej stronie. Podstawowe rzeczy nie są powtórzone ale możemy się ich dowiedzieć w dokumentacji obiektu HTMLElement.
+Np. HTMLCanvasElement umie wszystko to co podstawowe elementy (HTMLElement) ale ma też własne specjalne zdolności opisane na tej stronie. Możliwości HTMLElement nie są opisane w arytkule o HTMLCanvasElement ale możemy się ich dowiedzieć w artykule o samym HTMLElement.
 
 ### element canvas
 
@@ -39,7 +39,13 @@ Nas interesują głównie 3 rzeczy:
 
 width i height oraz getContext('2d')
 
-With i height to szerokość i wysokość płótna do rysowania. Żeby nasz obrazek wyglądał estetycznie, chcemy żeby wymiary płótna były równe wymiarom wlwmentu canvas. Dzięki temu obraz będzie ostry.
+With i height to szerokość i wysokość płótna do rysowania. Żeby nasz obrazek wyglądał estetycznie, chcemy żeby wymiary płótna były równe wymiarom elementu canvas. Dzięki temu obraz będzie ostry bo jeden piksel na ekranie to będzie jeden piksel na płótnie.
+
+::: details Czym są piksele
+
+Piksele to małe kwadracicki z których składa się obraz. Typowy ekran ma 1920 kolumn i 1080 rzędów, ale są też ekrany które mają mniej lub więcej pikseli, np ekrany 4k mają ich około 4 razy więcej.
+
+:::
 
 `getContext("nazwa_kontekstu")` pozwala nam pobrać kontekst do rysowania, czyli zestaw narzędzi. 
 
