@@ -1,1 +1,0 @@
-Lista rozdziałów powinna być widoczna z lewej strony

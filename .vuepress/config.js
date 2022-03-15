@@ -1,14 +1,25 @@
 const { description } = require('../package')
+const glob = require('glob');
+
+const mat_dirs = glob.sync('materialy/*').filter(s => !s.endsWith('.md'))
+
+const mat = mat_dirs.map( d => (
+  {
+    title: d.replace('materialy/',''),   // required
+    sidebarDepth: 3,
+    children: glob.sync(`${d}/*.md`).map(s => '/'+s)
+  }
+))
 
 module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Vuepress Docs Boilerplate',
+  title: 'Materiały edukacyjne',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
-  description: description,
+  description: "description",
 
   /**
    * Extra tags to be injected to the page HTML `<head>`
@@ -36,36 +47,47 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
-        text: 'Canvas',
-        link: '/canvas/01 - wstęp',
+        text: 'Grupa Pt 16:30',
+        link: '/grupy/pt-16-30/',
       },
       {
-        text: 'Array',
-        link: '/array/01 - podstawy'
+        text: 'Grupa Pt 18:15',
+        link: '/grupy/pt-18-15/'
+      },
+      {
+        text: 'Wszystkie materiały',
+        link: '/materialy/'
       }
     ],
-    sidebar:[  
-      {
-        title: 'Canvas',   // required
-        collapsable: false, // optional, defaults to true
-        sidebarDepth: 3,    // optional, defaults to 1
-        children: [
-          '/canvas/01 - wstęp',
-          '/canvas/02 - podstawy rysowania',
-          '/canvas/03 - rysowanie parametryczne',
-          '/canvas/91 - zaawansowane zmienne kontekstu'
-        ]
-      },
-      {
-        title: 'Array listy tablice',   // required
-        collapsable: false, // optional, defaults to true
-        sidebarDepth: 3,    // optional, defaults to 1
-        children: [
-          '/array/01 - podstawy'
-        ]
-      },
-    ]
-  },
+    sidebar:{
+      '/grupy/pt-18-15/':[
+        '/grupy/pt-18-15/',
+        {
+          title: 'Canvasy',   // required
+          collapsable: false, // optional, defaults to true
+          sidebarDepth: 3,    // optional, defaults to 1
+          children: [
+            '/grupy/pt-18-15/canvas/wytlumaczenie-podstawy',
+            '/grupy/pt-18-15/canvas/sciagawka-podstawy',
+            '/grupy/pt-18-15/canvas/projekt-gra-klikacz',
+          ]
+        },
+        {
+          title: 'Listy (Tablice Array)',   // required
+          collapsable: false, // optional, defaults to true
+          sidebarDepth: 3,    // optional, defaults to 1
+          children: [
+            '/grupy/pt-18-15/array/przedruk-dokumentacji'
+          ]
+        }
+      ],
+      '/materialy/':[
+        '/materialy/',
+        ...mat
+      ],
+      '/':[]
+    }
+},
   /**
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */

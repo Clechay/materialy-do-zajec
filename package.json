@@ -9,11 +9,14 @@
   },
   "repository": "/app3",
   "scripts": {
-    "dev": "vuepress dev",
-    "build": "vuepress build"
+    "dev": "node ./pre-build.js && vuepress dev",
+    "build": "node ./pre-build.js && vuepress build"
   },
   "license": "MIT",
   "devDependencies": {
     "vuepress": "^1.5.3"
+  },
+  "dependencies": {
+    "glob": "^7.2.0"
   }
 }
